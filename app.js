@@ -30,7 +30,7 @@ models.sequelize.sync()
 
 // root
 app.get("/", (req, res) => {
-    res.send('my node study');
+    res.send('My Contact App');
 });
 
 // 바디파서 사용을 위한 미들웨어 등록
@@ -40,5 +40,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/contacts", require("./routes/contactRoutes"));
 
 app.listen(3000, () => {
-    console.log('server running');
+    figlet("Server is running", (err, data) => {
+        if (err) {
+            console.log('Something went wrong...');
+            console.dir(err);
+            return;
+        }
+        console.log(data);
+        console.log('Server is running on port 3000');
+    });
 });
