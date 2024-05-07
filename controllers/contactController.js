@@ -6,7 +6,7 @@ const models = require("../models");
 const getAllContacts = asyncHandler(async (req, res) => {
     try {
         const contacts = await models.Contact.findAll();
-        res.send(contacts);
+        res.render("index", { contacts: contacts});
     } catch (error) {
         console.error("Error getting contacts:", error);
         res.status(500).send("Error getting contacts");

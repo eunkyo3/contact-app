@@ -2,7 +2,15 @@ const express = require("express");
 const models = require('./models/index.js');
 const figlet = require("figlet");
 
+// create server
 const app = express();
+
+// ejs
+app.set("view engine", "ejs");
+app.set("views", "./views");
+
+// 정적 콘텐츠 사용
+app.use(express.static("./public"));
 
 // DB 연결
 models.sequelize.sync()
