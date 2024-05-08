@@ -39,15 +39,11 @@ models.sequelize.sync()
         console.log(err);
     });
 
-// root
-app.get("/", (req, res) => {
-    res.send('My Contact App');
-});
-
 // 바디파서 사용을 위한 미들웨어 등록
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use("/", require("./routes/loginRoutes"))
 app.use("/contacts", require("./routes/contactRoutes"));
 
 app.listen(3000, () => {
