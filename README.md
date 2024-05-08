@@ -16,7 +16,12 @@ npx sequelize-cli db:migrate
 npm 전역 설치 확인
 npm root -g
 ```
-
+## 앞으로 추가 할 기능
+  - 로그아웃
+  - 로그인 해야 넘어가기(url로 넘어갈 수 있음)
+  - 로그인 세션
+  - 로그아웃 시 토큰 만료
+  - 로그아웃 버튼
 ### 참고 자료
 
 [doit-node Repository](https://github.com/funnycom/doit-node)
