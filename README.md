@@ -16,3 +16,7 @@ npx sequelize-cli db:migrate
 npm 전역 설치 확인
 npm root -g
 ```
+
+### 참고 자료
+
+[doit-node Repository](https://github.com/funnycom/doit-node)
