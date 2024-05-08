@@ -1,6 +1,7 @@
 const express = require("express");
 const models = require('./models/index.js');
 const figlet = require("figlet");
+const methodOverride = require("method-override");
 
 // create server
 const app = express();
@@ -11,6 +12,8 @@ app.set("views", "./views");
 
 // 정적 콘텐츠 사용
 app.use(express.static("./public"));
+
+app.use(methodOverride("_method"));
 
 // DB 연결
 models.sequelize.sync()

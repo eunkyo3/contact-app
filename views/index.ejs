@@ -3,7 +3,7 @@
 <!-- Main -->
 <main id="site-main">
 <div class="button-box">
-    <a href="#" class="btn btn-light"><i class="fa-solid fa-user-plus"></i>연락처 추가</a>
+    <a href="/contacts/add" class="btn btn-light"><i class="fa-solid fa-user-plus"></i>연락처 추가</a>
 </div>
 
 <table class="table">
@@ -22,12 +22,13 @@
         <td><%= contact.email %></td>
         <td><%= contact.phone %></td>
         <td>
-        <a href="#" class="btn update" title="수정">
+        <a href="/contacts/<%= contact.id %>" class="btn update" title="수정">
             <i class="fas fa-pencil-alt"></i>
         </a>
-        <a href="#" class="btn delete" title="삭제">
-            <i class="fas fa-times"></i>
-        </a>                
+        <!-- 삭제 버튼을 누를 때 확인 경고 추가 -->
+        <form action="/contacts/<%= contact.id %>?_method=DELETE" method="POST" style="display: inline;" onsubmit="return confirmDelete()">
+            <input type="submit" class="btn delete" title="삭제" value="X">
+        </form>                
         </td>
     </tr>
         <% }) %>
@@ -37,3 +38,6 @@
 <!-- /Main -->
 
 <%- include("./include/_footer") %>
+
+<!-- JavaScript 파일을 포함시킵니다 -->
+<script src="/your-script.js"></script>
