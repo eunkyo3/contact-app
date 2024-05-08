@@ -79,18 +79,12 @@ const updateContacts = asyncHandler(async (req, res) => {
 const deleteContacts = asyncHandler(async (req, res) => {
     const id = req.params.id;
     try {
-        // ID에 해당하는 연락처를 삭제합니다.
-        const deletedContactCount = await models.Contact.destroy({
-            where: { id: id }
-        });
-        
-        // 삭제된 연락처가 없는 경우
-        if (deletedContactCount === 0) {
+        const contact = await models.Contact.findByPk(id);
+        if (!contact) {
             return res.status(404).send("Contact not found");
         }
-
-        // 삭제 성공
-        res.redirect("/contacts");
+        await contact.destroy();
+        res.send("Contact deleted successfully");
     } catch (error) {
         console.error("Error deleting contact:", error);
         res.status(500).send("Error deleting contact");
