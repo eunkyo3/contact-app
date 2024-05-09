@@ -31,7 +31,7 @@ nodemon app.js
   - 로그인 세션
   - 로그아웃 시 토큰 만료
   - 로그아웃 버튼
-  - 연락처 추가 후 리다이렉트 안됨
+  - 레이아웃 사용
 ### 참고 자료
 
 [doit-node Repository](https://github.com/funnycom/doit-node)
