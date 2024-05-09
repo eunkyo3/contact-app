@@ -32,6 +32,7 @@ nodemon app.js
   - 로그아웃 시 토큰 만료
   - 로그아웃 버튼
   - 레이아웃 사용
+  - 데이터 전송 구간 암호화(http 프로토콜)
 ### 참고 자료
 
 [doit-node Repository](https://github.com/funnycom/doit-node)
