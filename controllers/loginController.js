@@ -31,6 +31,13 @@ const loginUser = asyncHandler(async(req, res) => {
     res.redirect("/contacts");
 });
 
+// Logout User
+// GET /logout
+const logoutUser = asyncHandler(async(req, res) => {
+    res.clearCookie('token');
+    res.redirect("/")
+});
+
 
 // Register Page
 // GET /register
@@ -54,4 +61,4 @@ const registerUser = asyncHandler(async(req, res) => {
     }
 });
 
-module.exports = { getLogin, loginUser, getRegister, registerUser };
+module.exports = { getLogin, loginUser, getRegister, registerUser, logoutUser };

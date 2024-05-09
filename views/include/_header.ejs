@@ -13,6 +13,31 @@
     function confirmDelete() {
         return confirm("삭제하시겠습니까?");
     }
+
+    // // 로그아웃
+    // function logout() {
+    //     fetch('/logout', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify({}) // POST 요청으로 보낼 데이터 (필요에 따라 데이터 추가 가능)
+    //     })
+    //     .then(response => {
+    //         if (response.ok) {
+    //             // 로그아웃 성공 시 처리
+    //             document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    //             console.log("Logout successful");
+    //             res
+    //         } else {
+    //             // 로그아웃 실패 시 처리
+    //             console.error("Logout failed");
+    //         }
+    //     })
+    //     .catch(error => {
+    //         console.error("Error:", error);
+    //     });
+    // }
 </script>
 
 </head>

@@ -34,7 +34,7 @@ const createContacts = asyncHandler(async (req, res) => {
             email: email,
             phone: phone
         });
-        res.send("Create Contacts");
+        res.redirect("/contacts");
     } catch (error) {
         console.error("Error creating contact:", error);
         res.status(500).send("Error creating contact");

@@ -2,9 +2,14 @@ const express = require("express");
 const models = require('./models/index.js');
 const figlet = require("figlet");
 const methodOverride = require("method-override");
+require("dotenv").config();
 
 // create server
 const app = express();
+
+
+// port
+const port = process.env.PORT || 3000;
 
 // ejs
 app.set("view engine", "ejs");
@@ -45,8 +50,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/", require("./routes/loginRoutes"))
 app.use("/contacts", require("./routes/contactRoutes"));
+app.use("/logout", require("./routes/loginRoutes.js"));
 
-app.listen(3000, () => {
+app.listen(port, () => {
     figlet("Server is running", (err, data) => {
         if (err) {
             console.log('Something went wrong...');
@@ -54,6 +60,6 @@ app.listen(3000, () => {
             return;
         }
         console.log(data);
-        console.log('Server is running on port 3000');
+        console.log(`Server is running on port ${port}`);
     });
 });
